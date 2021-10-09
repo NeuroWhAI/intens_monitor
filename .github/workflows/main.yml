@@ -19,6 +19,8 @@ jobs:
         run: flutter pub get
       - name: Build APK
         run: flutter build apk --release
+      - name: Rename APK
+        run: mv build/app/outputs/flutter-apk/app-release.apk ./intens_monitor.apk
       - name: Archive APK
         uses: actions/upload-artifact@v1
         with:
