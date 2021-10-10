@@ -43,3 +43,17 @@ jobs:
         with:
           name: ios-build
           path: build/ios/iphoneos
+  build_web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          channel: 'stable'
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Build web
+        uses: bluefireteam/flutter-gh-pages@v7
+        with:
+          baseHref: /intens_monitor/
