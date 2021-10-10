@@ -1,4 +1,4 @@
-package com.example.intens_monitor
+package com.neurowhai.intens_monitor
 
 import io.flutter.embedding.android.FlutterActivity
 
