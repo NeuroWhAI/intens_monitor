@@ -15,6 +15,18 @@ jobs:
         uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
+      - name: Download Android keystore
+        id: android_keystore
+        uses: timheuer/base64-to-file@v1.0.3
+        with:
+          fileName: key.jks
+          encodedString: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+      - name: Create key.properties
+        run: |
+          echo "storeFile=${{ steps.android_keystore.outputs.filePath }}" > android/key.properties
+          echo "storePassword=${{ secrets.ANDROID_KEYSTORE_PASSWORD }}" >> android/key.properties
+          echo "keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}" >> android/key.properties
+          echo "keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}" >> android/key.properties
       - name: Install dependencies
         run: flutter pub get
       - name: Build APK
@@ -26,6 +38,15 @@ jobs:
         with:
           name: android-build
           path: ./intens_monitor.apk
+      - name: Build AAB
+        run: flutter build appbundle --release
+      - name: Rename AAB
+        run: mv build/app/outputs/bundle/release/app-release.aab ./intens_monitor.aab
+      - name: Archive AAB
+        uses: actions/upload-artifact@v1
+        with:
+          name: android-build
+          path: ./intens_monitor.aab
   build_ios:
     runs-on: macos-latest
     steps:
