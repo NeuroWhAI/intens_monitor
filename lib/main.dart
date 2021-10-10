@@ -91,7 +91,7 @@ class _MyHomePageState extends ResumableState<MyHomePage> {
             Expanded(
                 child: Container(
               color: mmiBgColor,
-              padding: const EdgeInsets.all(32),
+              padding: const EdgeInsets.all(8),
               child: FittedBox(
                 fit: BoxFit.contain,
                 child: Center(
@@ -105,7 +105,7 @@ class _MyHomePageState extends ResumableState<MyHomePage> {
             Expanded(
                 child: Container(
               color: jmaBgColor,
-              padding: const EdgeInsets.all(32),
+              padding: const EdgeInsets.all(8),
               child: FittedBox(
                 fit: BoxFit.contain,
                 child: Center(
