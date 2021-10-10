@@ -1,6 +1,6 @@
 {
-    "name": "intens_monitor",
-    "short_name": "intens_monitor",
+    "name": "Intens Monitor",
+    "short_name": "Intens Monitor",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#FFFFFF",
