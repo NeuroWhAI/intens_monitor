@@ -91,13 +91,14 @@ class _MyHomePageState extends ResumableState<MyHomePage> {
             Expanded(
                 child: Container(
               color: mmiBgColor,
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(24),
               child: FittedBox(
                 fit: BoxFit.contain,
                 child: Center(
                   child: Text(
                     mmiSym,
-                    style: TextStyle(color: mmiFgColor),
+                    style: TextStyle(color: mmiFgColor, letterSpacing: -1.0),
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
@@ -105,13 +106,14 @@ class _MyHomePageState extends ResumableState<MyHomePage> {
             Expanded(
                 child: Container(
               color: jmaBgColor,
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(24),
               child: FittedBox(
                 fit: BoxFit.contain,
                 child: Center(
                   child: Text(
                     jmaSym,
                     style: TextStyle(color: jmaFgColor),
+                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
