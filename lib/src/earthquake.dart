@@ -30,27 +30,27 @@ int gToMmi(double g) {
 
 String mmiToSymbol(int mmi) {
   if (mmi <= 1) {
-    return "Ⅰ";
+    return "I";
   } else if (mmi == 2) {
-    return "Ⅱ";
+    return "II";
   } else if (mmi == 3) {
-    return "Ⅲ";
+    return "III";
   } else if (mmi == 4) {
-    return "Ⅳ";
+    return "IV";
   } else if (mmi == 5) {
-    return "Ⅴ";
+    return "V";
   } else if (mmi == 6) {
-    return "Ⅵ";
+    return "VI";
   } else if (mmi == 7) {
-    return "Ⅶ";
+    return "VII";
   } else if (mmi == 8) {
-    return "Ⅷ";
+    return "VIII";
   } else if (mmi == 9) {
-    return "Ⅸ";
+    return "IX";
   } else if (mmi == 10) {
-    return "Ⅹ";
+    return "X";
   } else {
-    return "Ⅹ+";
+    return "X+";
   }
 }
 
